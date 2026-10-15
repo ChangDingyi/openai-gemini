@@ -233,7 +233,7 @@ const adjustProps = (schemaPart) => {
   if (Array.isArray(schemaPart)) {
     schemaPart.forEach(adjustProps);
   } else {
-    if (schemaPart.type === "object" && schemaPart.properties && schemaPart["additionalProperties"] !== undefined && schemaPart.additionalProperties === false) {
+    if (schemaPart.type === "object" && schemaPart.properties && schemaPart.hasOwnProperty("additionalProperties") && schemaPart.additionalProperties === false) {
       delete schemaPart.additionalProperties;
     }
     Object.values(schemaPart).forEach(adjustProps);
