@@ -239,6 +239,7 @@ const adjustProps = (schemaPart) => {
     Object.values(schemaPart).forEach(adjustProps);
   }
 };
+
 const adjustSchema = (schema) => {
   const obj = schema[schema.type];
   delete obj.strict;
